@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StatisticsContainer, StatisticsItem } from './Statistics.styled';
 
 
-export class Statistics extends Component {
-    render() {
-        const { good, neutral, bad, totalFeedback, positiveFeedbackPercentage } = this.props;
+export const Statistics = ({ good, neutral, bad, totalFeedback, positiveFeedbackPercentage }) => {
         return (
             <StatisticsContainer>
             <StatisticsItem>Good: {good}</StatisticsItem>
@@ -15,8 +12,7 @@ export class Statistics extends Component {
             <StatisticsItem>Positive Feedback Percentage: {positiveFeedbackPercentage?positiveFeedbackPercentage:0}%</StatisticsItem>  
         </StatisticsContainer>
         );
-      }
-    }
+}
 
 Statistics.propTypes = {
     good: PropTypes.number.isRequired,
